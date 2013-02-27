@@ -1,5 +1,5 @@
 {
-	"name": "silverstripe/newsletter_viewarchive",
+	"name": "sunnysideup/newsletter_viewarchive",
 	"type": "silverstripe-module",
 	"description": "extension for the Silverstripe newsletter module. It allows the user to view old newsletters",
 	"homepage": "http://www.silverstripe-webdevelopment.com",
