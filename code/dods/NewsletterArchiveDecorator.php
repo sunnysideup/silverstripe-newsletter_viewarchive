@@ -5,16 +5,12 @@
  *
  **/
 
-class NewsletterArchiveDecorator extends DataObjectDecorator {
+class NewsletterArchiveDecorator extends DataExtension {
 
-function extraStatics(){
-		return array(
-			'casting' => array(
-				"ViewingPage" => "SiteTree",
-				"Link" => "Varchar"
-			),
-		);
-	}
+	private static $casting => array(
+		"ViewingPage" => "SiteTree",
+		"Link" => "Varchar"
+	);
 
 
 	function getViewingPage() {
@@ -24,9 +20,10 @@ function extraStatics(){
 	function ViewingPage() {
 		if($this->owner->SentDate) {
 			if($this->owner->ParentID) {
-				$parent = DataObject::get_by_id("NewsletterType", $this->owner->ParentID);
+				$parent = NewsletterType::get()->byID($this->owner->ParentID);
 				if($parent) {
-					return DataObject::get_one("NewsletterArchivePage", "NewsletterTypeID = ".$parent->ID);
+					return NewsletterArchivePage::get()
+						->filter(array("NewsletterTypeID" => $parent->ID))->first();
 				}
 			}
 		}
