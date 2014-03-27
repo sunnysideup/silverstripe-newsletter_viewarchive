@@ -7,7 +7,7 @@
 
 class NewsletterArchiveDecorator extends DataExtension {
 
-	private static $casting => array(
+	private static $casting = array(
 		"ViewingPage" => "SiteTree",
 		"Link" => "Varchar"
 	);
