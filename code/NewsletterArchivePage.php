@@ -1,13 +1,15 @@
 <?php
 
 /**
- * This pays allows you to display old newsletters.
+ * This page allows you to display old newsletters.
  *
  **/
 
 class NewsletterArchivePage extends Page {
 
 	private static $icon = "newsletter_viewarchive/images/treeicons/NewsletterArchivePage";
+
+	private static $description = "This page allows you to display old newletters";
 
 	private static $has_one = array(
 		"NewsletterType" => "NewsletterType"
