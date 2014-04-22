@@ -1,7 +1,7 @@
 <?php
 
 /**
- * This pays allows you to display old newsletters.
+ * Decorates newsletters
  *
  **/
 
@@ -18,15 +18,7 @@ class NewsletterArchiveDecorator extends DataExtension {
 	}
 
 	function ViewingPage() {
-		if($this->owner->SentDate) {
-			if($this->owner->ParentID) {
-				$parent = NewsletterType::get()->byID($this->owner->ParentID);
-				if($parent) {
-					return NewsletterArchivePage::get()
-						->filter(array("NewsletterTypeID" => $parent->ID))->first();
-				}
-			}
-		}
+		return NewsletterArchivePage::get()->filter()->first();
 	}
 
 	function Link()  {

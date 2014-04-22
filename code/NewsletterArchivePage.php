@@ -38,8 +38,7 @@ class NewsletterArchivePage_Controller extends Page_Controller {
 			return Newsletter::get()
 				->filter(
 					array(
-						"Status" => 'Send',
-						"ParentID" => $this->NewsletterTypeID
+						"Status" => 'Send'
 					)
 				);
 		}
