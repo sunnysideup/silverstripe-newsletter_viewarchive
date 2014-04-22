@@ -15,6 +15,19 @@ class NewsletterArchivePage extends Page {
 		"NewsletterType" => "NewsletterType"
 	);
 
+	/**
+	 * Standard SS variable.
+	 */
+	private static $singular_name = "Newsletter Archive Page";
+		function i18n_singular_name() { return _t("NewsletterArchivePage.SINGULARNAME", "Newsletter Archive Page");}
+
+	/**
+	 * Standard SS variable.
+	 */
+	private static $plural_name = "Newsletter Archive Pages";
+		function i18n_plural_name() { return _t("NewsletterArchivePage.PLURALNAME", "Newsletter Archive Pages");}
+
+
 	function getCMSFields() {
 		$fields = parent::getCMSFields();
 		$types = NewsletterType::get();
