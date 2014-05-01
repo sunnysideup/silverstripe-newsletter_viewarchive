@@ -12,7 +12,7 @@ class NewsletterArchivePage extends Page {
 	private static $description = "This page allows you to display old newletters";
 
 	private static $has_one = array(
-		"NewsletterType" => "NewsletterType"
+		"NewsletterType" => "MailingList"
 	);
 
 	/**
@@ -30,12 +30,12 @@ class NewsletterArchivePage extends Page {
 
 	function getCMSFields() {
 		$fields = parent::getCMSFields();
-		$types = NewsletterType::get();
+		$types = MailingList::get();
 		if($types->count()) {
 			$array = array("" => " -- Please select newsletter --");
 			$array += $types->map()->toArray();
 			if(count($array)) {
-				$fields->addFieldToTab("Root.Newsletter", new DropdownField("NewsletterTypeID", "Select Newsletter", $array));
+				$fields->addFieldToTab("Root.Newsletter", new DropdownField("MailingListID", "Select Newsletter", $array));
 			}
 		}
 		return $fields;
