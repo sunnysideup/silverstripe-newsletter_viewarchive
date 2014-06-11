@@ -44,6 +44,10 @@ class NewsletterArchivePage extends Page {
 
 class NewsletterArchivePage_Controller extends Page_Controller {
 
+	private static $allowed_actions = array(
+		"showonenewsletter"
+	);
+
 	protected $newsletterID = 0;
 
 	function NewsletterList() {
