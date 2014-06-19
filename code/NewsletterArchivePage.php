@@ -12,7 +12,7 @@ class NewsletterArchivePage extends Page {
 	private static $description = "This page allows you to display old newletters";
 
 	private static $has_one = array(
-		"NewsletterType" => "MailingList"
+		"MailingList" => "MailingList"
 	);
 
 	/**
@@ -32,7 +32,7 @@ class NewsletterArchivePage extends Page {
 		$fields = parent::getCMSFields();
 		$types = MailingList::get();
 		if($types->count()) {
-			$array = array("" => " -- Please select newsletter --");
+			$array = array("" => " -- Please select Mailing List --");
 			$array += $types->map()->toArray();
 			if(count($array)) {
 				$fields->addFieldToTab("Root.Newsletter", new DropdownField("MailingListID", "Select Newsletter", $array));
@@ -51,13 +51,16 @@ class NewsletterArchivePage_Controller extends Page_Controller {
 	protected $newsletterID = 0;
 
 	function NewsletterList() {
-		if($this->NewsletterTypeID) {
-			return Newsletter::get()
-				->filter(
-					array(
-						"Status" => 'Send'
-					)
-				);
+		$items = Newsletter::get()
+			->filter(
+				array(
+					"Status" => "Sent"
+				)
+			);
+
+		if($mailingList = $this->MailingList()) {
+			$newsletterArray = $mailinglists->Newsletters()->map("ID", "ID")->toArray();
+			$items = $items->filter("ID", $newsletterArray);
 		}
 	}
 
@@ -68,8 +71,7 @@ class NewsletterArchivePage_Controller extends Page_Controller {
 	}
 
 	function showonenewsletter($request) {
-		if($newsletterID = intval($request->Param("ID"))) {
-			$this->newsletterID = $newsletterID;
+		if($this->newsletterID = intval($request->Param("ID"))) {
 			if($newsletter = $this->Newsletter()) {
 				$this->Title = $newsletter->Subject;
 				$this->Content = $newsletter->Content;

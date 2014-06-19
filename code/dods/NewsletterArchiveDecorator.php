@@ -12,13 +12,12 @@ class NewsletterArchiveDecorator extends DataExtension {
 		"Link" => "Varchar"
 	);
 
-
 	function getViewingPage() {
 		return $this->owner->ViewingPage();
 	}
 
 	function ViewingPage() {
-		return NewsletterArchivePage::get()->filter()->first();
+		return NewsletterArchivePage::get()->first();
 	}
 
 	function Link()  {

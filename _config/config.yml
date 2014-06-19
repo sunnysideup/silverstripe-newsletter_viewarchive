@@ -1,0 +1,4 @@
+
+Newsletter:
+  extensions:
+    - NewsletterArchiveDecorator
