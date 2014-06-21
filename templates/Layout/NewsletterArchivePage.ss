@@ -15,7 +15,7 @@
 	<% if NewsletterList %>
 	<ul id="NewsletterList">
 		<% loop NewsletterList %>
-		<li class="$FirstLast item"><a href="$Link">$Subject, $SentDate.Long</a></li>
+		<li class="$FirstLast item"><a href="$ViewLink">$Subject, $SentDate.Long</a></li>
 		<% end_loop %>
 	</ul>
 	<% end_if %>

@@ -11,8 +11,8 @@ class NewsletterArchivePage extends Page {
 
 	private static $description = "This page allows you to display old newletters";
 
-	private static $has_one = array(
-		"MailingList" => "MailingList"
+	private static $many_many = array(
+		"MailingLists" => "MailingList"
 	);
 
 	/**
@@ -30,14 +30,7 @@ class NewsletterArchivePage extends Page {
 
 	function getCMSFields() {
 		$fields = parent::getCMSFields();
-		$types = MailingList::get();
-		if($types->count()) {
-			$array = array("" => " -- Please select Mailing List --");
-			$array += $types->map()->toArray();
-			if(count($array)) {
-				$fields->addFieldToTab("Root.Newsletter", new DropdownField("MailingListID", "Select Newsletter", $array));
-			}
-		}
+		$fields->addFieldToTab("Root.Newsletter", new CheckboxSetField("MailingLists", "Show Mailing Lists", MailingList::get()->map()));
 		return $fields;
 	}
 }
@@ -58,10 +51,18 @@ class NewsletterArchivePage_Controller extends Page_Controller {
 				)
 			);
 
-		if($mailingList = $this->MailingList()) {
-			$newsletterArray = $mailinglists->Newsletters()->map("ID", "ID")->toArray();
+
+		$newsletterArray = array();
+		if($mailingList = $this->MailingLists()) {
+			foreach($mailingList as $mailingList) {
+				$newsletterItems = $mailingList->Newsletters()->map("ID", "ID")->toArray();
+				foreach($newsletterItems as $newsletterItemID => $newsletterItem) {
+					$newsletterArray[$newsletterItemID] = $newsletterItemID;
+				}
+			}
 			$items = $items->filter("ID", $newsletterArray);
 		}
+		return $items;
 	}
 
 	function Newsletter() {
