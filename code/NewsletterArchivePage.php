@@ -44,23 +44,23 @@ class NewsletterArchivePage_Controller extends Page_Controller {
 	protected $newsletterID = 0;
 
 	function NewsletterList() {
-		$items = Newsletter::get()
-			->filter(
-				array(
-					"Status" => "Sent"
-				)
-			);
-
-
 		$newsletterArray = array();
-		if($mailingList = $this->MailingLists()) {
-			foreach($mailingList as $mailingList) {
+		if($mailingLists = $this->MailingLists()) {
+			foreach($mailingLists as $mailingList) {
 				$newsletterItems = $mailingList->Newsletters()->map("ID", "ID")->toArray();
 				foreach($newsletterItems as $newsletterItemID => $newsletterItem) {
 					$newsletterArray[$newsletterItemID] = $newsletterItemID;
 				}
 			}
-			$items = $items->filter("ID", $newsletterArray);
+			$items =  Newsletter::get()->filter(
+				array(
+					"Status" => "Sent",
+					"ID" => $newsletterArray
+				)
+			);
+		}
+		else {
+			$items = Newsletter::get()->filter(array("Status" => "Sent"));
 		}
 		return $items;
 	}
