@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<index xmlns="http://xml.phpdox.net/src" basedir="/var/www/_modules/newsletter_viewarchive/trunk">
-  <namespace name="">
-    <class name="NewsletterArchiveDecorator" src="code/dods/NewsletterArchiveDecorator.php" description="Decorates newsletters" xml="classes/NewsletterArchiveDecorator.xml"/>
-    <class name="NewsletterArchivePage" src="code/NewsletterArchivePage.php" description="This page allows you to display old newsletters." xml="classes/NewsletterArchivePage.xml"/>
-    <class name="NewsletterArchivePage_Controller" src="code/NewsletterArchivePage.php" xml="classes/NewsletterArchivePage_Controller.xml"/>
-  </namespace>
-</index>
