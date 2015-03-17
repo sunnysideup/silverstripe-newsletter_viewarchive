@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<source xmlns="http://xml.phpdox.net/src">
+  <dir name="/var/www/_modules/newsletter_viewarchive/trunk">
+    <file name="_config.php" size="11" time="2015-03-14T10:23:26+13:00" unixtime="1426281806" sha1="e919ddaa2a7f50b6ad5ff070cee71467abbcdf73" xml="tokens/_config.php.xml"/>
+    <dir name="code">
+      <dir name="dods">
+        <file name="NewsletterArchiveDecorator.php" size="1075" time="2015-03-14T10:23:26+13:00" unixtime="1426281806" sha1="6699ddc062d929d6afe178f611d57ad73b634dcb" xml="tokens/code/dods/NewsletterArchiveDecorator.php.xml"/>
+      </dir>
+      <file name="NewsletterArchivePage.php" size="2134" time="2015-03-14T10:23:26+13:00" unixtime="1426281806" sha1="4ea8d51845dae00adbdda99e72d462d396063396" xml="tokens/code/NewsletterArchivePage.php.xml"/>
+    </dir>
+  </dir>
+</source>
