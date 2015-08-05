@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="NewsletterArchivePage" namespace="" name="NewsletterArchivePage" abstract="false" final="false" start="8" end="36">
+  <file path="/var/www/_modules/newsletter_viewarchive/trunk/docs/en/phpdox/../../../code" file="NewsletterArchivePage.php" realpath="/var/www/_modules/newsletter_viewarchive/trunk/code/NewsletterArchivePage.php" size="2134" time="2015-03-14T10:23:26+13:00" unixtime="1426281806" sha1="4ea8d51845dae00adbdda99e72d462d396063396" relative="code/NewsletterArchivePage.php"/>
+  <docblock>
+    <description compact="This page allows you to display old newsletters."/>
+  </docblock>
+  <extends full="Page" namespace="" name="Page"/>
+  <member name="icon" type="string" default="&quot;newsletter_viewarchive/images/treeicons/NewsletterArchivePage&quot;" visibility="private" line="10"/>
+  <member name="description" type="string" default="&quot;This page allows you to display old newletters&quot;" visibility="private" line="12"/>
+  <member name="many_many" type="array" visibility="private" line="14"/>
+  <member name="singular_name" type="string" default="&quot;Newsletter Archive Page&quot;" visibility="private" line="21">
+    <docblock>
+      <description compact="Standard SS variable."/>
+    </docblock>
+  </member>
+  <method name="i18n_singular_name" start="22" end="22" abstract="false" final="false" static="false" visibility="public"/>
+  <member name="plural_name" type="string" default="&quot;Newsletter Archive Pages&quot;" visibility="private" line="27">
+    <docblock>
+      <description compact="Standard SS variable."/>
+    </docblock>
+  </member>
+  <method name="i18n_plural_name" start="28" end="28" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="getCMSFields" start="31" end="35" abstract="false" final="false" static="false" visibility="public"/>
+</class>

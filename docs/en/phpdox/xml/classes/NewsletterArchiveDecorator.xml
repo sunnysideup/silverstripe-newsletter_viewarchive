@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="NewsletterArchiveDecorator" namespace="" name="NewsletterArchiveDecorator" abstract="false" final="false" start="8" end="37">
+  <file path="/var/www/_modules/newsletter_viewarchive/trunk/docs/en/phpdox/../../../code/dods" file="NewsletterArchiveDecorator.php" realpath="/var/www/_modules/newsletter_viewarchive/trunk/code/dods/NewsletterArchiveDecorator.php" size="1075" time="2015-03-14T10:23:26+13:00" unixtime="1426281806" sha1="6699ddc062d929d6afe178f611d57ad73b634dcb" relative="code/dods/NewsletterArchiveDecorator.php"/>
+  <docblock>
+    <description compact="Decorates newsletters"/>
+  </docblock>
+  <extends full="DataExtension" namespace="" name="DataExtension"/>
+  <member name="casting" type="array" visibility="private" line="10"/>
+  <method name="getViewingPage" start="15" end="17" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="ViewingPage" start="19" end="28" abstract="false" final="false" static="false" visibility="public"/>
+  <method name="ViewLink" start="30" end="35" abstract="false" final="false" static="false" visibility="public"/>
+</class>
