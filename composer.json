@@ -3,8 +3,10 @@
     "type": "silverstripe-module",
     "description": "extension for the Silverstripe newsletter module. It allows the user to view old newsletters",
     "keywords": [
-        "newsletter_viewarchive",
-        "silverstripe"
+        "Silverstripe-CMS",
+        "CMS",
+        "Silverstripe",
+        "newsletter_viewarchive"
     ],
     "license": "Sunny Side Up (BSD-3-Clause and CUSTOM)",
     "authors": [
